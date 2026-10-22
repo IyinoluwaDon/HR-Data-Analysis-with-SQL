@@ -1,0 +1,9 @@
+department,reviews,mean_rating,mean_manager_score,mean_peer_score
+Finance,86,3.477,3.488,3.5
+Sales,147,3.401,3.381,3.429
+Engineering,238,3.349,3.366,3.361
+Operations,126,3.333,3.302,3.246
+Customer Success,100,3.33,3.24,3.39
+HR,90,3.278,3.411,3.256
+Product,94,3.255,3.383,3.181
+Marketing,119,3.252,3.361,3.185

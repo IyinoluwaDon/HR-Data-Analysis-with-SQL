@@ -1,0 +1,25 @@
+department,attrition_risk,reviews,department_pct
+Customer Success,High,71,71.0
+Customer Success,Low,6,6.0
+Customer Success,Medium,23,23.0
+Engineering,High,177,74.37
+Engineering,Low,14,5.88
+Engineering,Medium,47,19.75
+Finance,High,59,68.6
+Finance,Low,4,4.65
+Finance,Medium,23,26.74
+HR,High,70,77.78
+HR,Low,3,3.33
+HR,Medium,17,18.89
+Marketing,High,82,68.91
+Marketing,Low,9,7.56
+Marketing,Medium,28,23.53
+Operations,High,83,65.87
+Operations,Low,13,10.32
+Operations,Medium,30,23.81
+Product,High,69,73.4
+Product,Low,5,5.32
+Product,Medium,20,21.28
+Sales,High,101,68.71
+Sales,Low,11,7.48
+Sales,Medium,35,23.81
