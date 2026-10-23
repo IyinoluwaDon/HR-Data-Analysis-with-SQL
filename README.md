@@ -1,19 +1,33 @@
-# HR analysis with SQLite
+# HR Data Analysis with SQLite
 
-A reproducible descriptive analysis of the supplied `abc_inc_hr.db`: 1,000 employees and 1,000 performance-review rows. The project examines headcount, salaries in BDT, recorded review scores, bonus estimates, reporting spans, tenure, and the database's attrition-risk labels.
+A read-only descriptive analysis of a bundled SQLite HR database. Named SQL queries export summary tables for review without modifying the source database.
 
-## Reproduce
+## What is included
 
-Use Python 3.10 or newer and run `python run_analysis.py`. No external packages are required. The runner opens the database read-only, checks database integrity and review foreign keys, and writes twelve CSV results plus `results/summary.json`. The complete queries are in `queries/analysis.sql`; they can also be run in DB Browser for SQLite. `--output-dir` selects a different result folder.
+- Twelve repeatable SQL analyses and CSV exports
+- Database integrity and foreign-key validation
+- Tenure calculations anchored to review dates
 
-Tenure is measured at each review's end date. It no longer changes simply because the query runs in a later calendar year. The DB Browser project uses the same date basis and opens the source database read-only.
+## Run locally
 
-## Interpretation
+```sh
+python run_analysis.py --output-dir results
+```
 
-Engineering has the largest headcount (238), while Product has the highest mean monthly salary in this sample. The database labels 712 review rows as high attrition risk; these are supplied labels, not observed departures or validated predictions. They do not establish a need for action against an individual employee. Manager and peer score averages are descriptive and do not prove review fairness.
+## Verify
 
-Null reporting-manager values do not establish that the affected staff are senior leaders. `data_quality.csv` and `missing_manager_references.csv` make the checks explicit. Bonus calculations multiply monthly salary by the recorded fractional bonus field; an annual bonus policy is not provided.
+The analysis validates SQLite integrity and foreign keys before exporting. Run `python run_analysis.py --output-dir results` to reproduce all query outputs.
 
-## Data provenance and limits
+## Repository map
 
-The original files do not document the database source, license, sampling process, or how attrition labels were assigned. The database contains names and compensation fields; do not assume it is anonymized or synthetic. The analysis outputs intentionally omit employee names. This is an exploratory portfolio analysis, not a causal study or a predictive employee-scoring system.
+`abc_inc_hr.db` is the supplied database. `queries/analysis.sql` contains the named read-only queries. `run_analysis.py` writes CSV and JSON summaries to the selected output directory.
+
+## Evidence and limitations
+
+All twelve exports were generated and database integrity checks passed. The results describe this supplied database only.
+
+The dataset's source, license, collection process and definitions are not documented. Attrition-related findings are descriptive and do not demonstrate causal effects or predict employee behavior. Keep any derived data subject to the same privacy controls as the source.
+
+## License
+
+No repository license file is included. Unless the project owner adds a license, do not assume the code, data or model artifacts may be redistributed or reused. Verify third-party data and model terms separately.
