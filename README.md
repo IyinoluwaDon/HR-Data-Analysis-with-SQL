@@ -1,33 +1,13 @@
-# HR Data Analysis with SQLite
+# HR Data Analysis with SQLite and SQL
 
-A read-only descriptive analysis of a bundled SQLite HR database. Named SQL queries export summary tables for review without modifying the source database.
+A read-only analysis of the supplied HR database. Twelve named SQL queries summarize the workforce and export review-ready CSV tables; integrity and foreign-key checks run before the analysis. Tenure calculations use explicit review dates.
 
-## What is included
+`abc_inc_hr.db` is the supplied database, `queries/analysis.sql` contains the analyses, and `run_analysis.py` writes CSV and JSON results to the chosen output folder.
 
-- Twelve repeatable SQL analyses and CSV exports
-- Database integrity and foreign-key validation
-- Tenure calculations anchored to review dates
-
-## Run locally
+## Reproduce the outputs
 
 ```sh
 python run_analysis.py --output-dir results
 ```
 
-## Verify
-
-The analysis validates SQLite integrity and foreign keys before exporting. Run `python run_analysis.py --output-dir results` to reproduce all query outputs.
-
-## Repository map
-
-`abc_inc_hr.db` is the supplied database. `queries/analysis.sql` contains the named read-only queries. `run_analysis.py` writes CSV and JSON summaries to the selected output directory.
-
-## Evidence and limitations
-
-All twelve exports were generated and database integrity checks passed. The results describe this supplied database only.
-
-The dataset's source, license, collection process and definitions are not documented. Attrition-related findings are descriptive and do not demonstrate causal effects or predict employee behavior. Keep any derived data subject to the same privacy controls as the source.
-
-## License
-
-No repository license file is included. Unless the project owner adds a license, do not assume the code, data or model artifacts may be redistributed or reused. Verify third-party data and model terms separately.
+The results describe the records in this SQLite database and preserve the source database unchanged.
